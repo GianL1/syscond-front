@@ -2,7 +2,6 @@
   <footer id="footer">
       <p>Syscond &copy; 2023</p>
   </footer>
-  <p>Footer</p>
 </template>
 
 <script>
