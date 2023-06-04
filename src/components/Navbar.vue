@@ -5,6 +5,7 @@
     </router-link> |
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <router-link to="/bloco/index">Blocos</router-link>
   </nav>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   }
 
   nav a {
-    color: #fcba03;
+    color: #009879;
     text-decoration: none;
     margin: 12px;
     transition: .5s;

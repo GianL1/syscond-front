@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p>{{ info }}</p>
+      <Message :msg="msg" v-show="msg"></Message>
 
       <form action="" method="post" id="bloco-form" @submit="createBloco">
         <div class="input-container">
@@ -21,9 +21,11 @@
 <script>
 
 import axios from "axios";
+import Message from "@/components/Message";
 
 export default {
   name: "BlocoForm",
+  components: {Message},
   data(){
     return {
       name_bloco:''
@@ -31,7 +33,8 @@ export default {
   }
   ,
   methods:{
-    createBloco(e){
+
+    async createBloco(e){
       e.preventDefault();
 
       const data = {
@@ -52,11 +55,18 @@ export default {
             console.error(error)
           })
 
+      this.successMessage();
+
       this.limparCampos();
     },
 
     limparCampos(){
       this.name_bloco = '';
+    },
+    
+    successMessage() {
+      this.msg = `Bloco cadastrado com sucesso`;
+      setTimeout(()=> this.msg = '', 3000);
     }
   }
 }
