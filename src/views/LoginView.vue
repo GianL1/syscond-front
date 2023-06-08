@@ -35,6 +35,7 @@
           auth.setUser(data.user);
 
           const isAutenticated = await auth.checkToken();
+
           if (isAutenticated.valid) {
 
             this.$router.push({name:'bloco'})
