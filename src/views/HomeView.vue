@@ -7,8 +7,8 @@
 
 <script>
 
-
 import BlocoForm from "@/components/BlocoForm";
+
 export default {
   name: 'HomeView',
   components: {BlocoForm}

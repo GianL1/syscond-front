@@ -3,15 +3,13 @@
     <div>
       <Message :msg="msg" v-show="msg"></Message>
 
-      <form action="" method="post" id="bloco-form" @submit="createBloco">
+      <form  @submit.prevent="createBloco">
         <div class="input-container">
           <label for="name_bloco">Nome do Bloco</label>
           <input type="text" name="name_bloco" id="name_bloco" v-model="name_bloco" placeholder="Digite o nome do bloco">
         </div>
 
-        <div class="input-container">
-          <input type="submit" class="submit-btn" value="Cadastrar Bloco">
-        </div>
+        <InputSubmit :titulo_botao=titulo_botao></InputSubmit>
       </form>
     </div>
 
@@ -22,13 +20,15 @@
 
 import axios from "axios";
 import Message from "@/components/Message";
+import InputSubmit from "@/components/form/InputSubmit";
 
 export default {
   name: "BlocoForm",
-  components: {Message},
+  components: {InputSubmit, Message},
   data(){
     return {
-      name_bloco:''
+      name_bloco:'',
+      titulo_botao:'Cadastrar Bloco'
     }
   }
   ,

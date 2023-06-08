@@ -3,6 +3,7 @@
     <router-link to="/" id="logo-url">
       <img :src="logo" :alt="alt" id="logo">
     </router-link> |
+    <router-link to="/login">Login</router-link>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
     <router-link to="/bloco/index">Blocos</router-link>

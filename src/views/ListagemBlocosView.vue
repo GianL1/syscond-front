@@ -21,6 +21,9 @@
 
 <script>
 import axios from "axios";
+import {useAuth} from "@/stores/auth";
+
+const auth = useAuth();
 
   export default {
     name: "ListagemBlocos",
@@ -33,9 +36,7 @@ import axios from "axios";
       async getBlocos() {
 
         const headers = {
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9' +
-              '.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODU4NTI3MTQsImV4cCI6MTY4NTg1NjMxNCwibmJmIjoxNjg1ODUyNzE0LCJqdGkiOiJzVkROQlFuV2pvQktMUlptIiwic3ViIjoiMSIsInBydiI6IjYwNWIyNjUxYzJmMzcxNmJhYTRmN2I2Nzg2YThhYTJmNTg3YjNkYzgifQ' +
-              '.ttpKkgm1JTTpZRWhn0AUd9m9Rwy9ebz5iGLbjEmc0hc'
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
         }
 
         const response = await axios.get('http://127.0.0.1:8000/api/bloco/index', {headers});
