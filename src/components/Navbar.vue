@@ -16,7 +16,6 @@
 
 <script>
 import {useAuth} from "@/stores/auth";
-import axios from "axios";
 
 export default {
   name: "Navbar",
@@ -25,8 +24,6 @@ export default {
     return {
       auth: useAuth()
     }
-  },
-  methods:{
   }
 }
 </script>
