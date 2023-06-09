@@ -38,7 +38,12 @@ export const useAuth = defineStore('auth', () => {
         return user.value && token.value;
     }
 
+    function clear() {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+    }
+
     return {
-        token, user, setToken, setUser, checkToken, isAutenticated
+        token, user, setToken, setUser, checkToken, isAutenticated,clear
     }
 })

@@ -4,9 +4,16 @@
 
 <script>
 import axios from "axios";
+import {useAuth} from "@/stores/auth";
 
 export default {
   name: "LogoutView",
+  data() {
+    return {
+      auth: useAuth(),
+      reload:false
+    }
+  },
   methods: {
     async logout() {
 
@@ -28,7 +35,8 @@ export default {
           )
       ;
 
-      this.$router.push({name:'login'})
+      this.auth.clear();
+      this.$router.push({name:'home'})
     }
   },
   mounted() {
