@@ -45,7 +45,7 @@ export default {
 
       axios.post('http://127.0.0.1:8000/api/bloco', dataJson,{
         headers: {
-          'Authorization': `Bearer `
+          'Authorization': `Bearer ` +  + localStorage.getItem('token')
         }
       })
           .then((res) => {
