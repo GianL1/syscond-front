@@ -31,6 +31,19 @@ const routes = [
     name: 'bloco',
     component: () => import('../views/ListagemBlocosView.vue'),
     meta: { auth: true }
+  },
+  {
+    path: '/blocos/create',
+    name: 'blocosCreate',
+    component: () => import('../views/BlocoFormView.vue'),
+    meta: { auth: true }
+  },
+  {
+    path: '/apartments/create/:id_bloco',
+    name: 'apartmentsCreate',
+    component: () => import('../views/CreateApartmentView.vue'),
+    meta: { auth: true },
+    props:true
   }
 ]
 

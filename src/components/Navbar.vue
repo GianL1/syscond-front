@@ -7,10 +7,11 @@
     
     <router-link to="" v-if="auth.isAutenticated()"> Olá, {{ auth.user.name }} </router-link>
     <router-link to="" v-else> Olá, Visitante </router-link>|
-    <router-link to="/login">Login</router-link> |
+    <router-link to="/login" v-if="!auth.isAutenticated()">Login</router-link> 
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/bloco/index">Blocos</router-link> |
+    <router-link to="/blocos/create" v-if="auth.isAutenticated()">Cadastrar Blocos </router-link> |
     <router-link to="/logout" v-if="auth.isAutenticated()">Logout</router-link>
   </nav>
 </template>

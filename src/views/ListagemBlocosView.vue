@@ -1,21 +1,13 @@
 <template>
-  <div id="blocos-table">
-    <table>
-      <thead>
-      <tr>
-        <th>
-          Nome do Bloco
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="bloco in blocos">
-        <td >
-          {{bloco.name_bloco}}
-        </td>
-      </tr>
-      </tbody>
-    </table>
+  <div id="blocos-list" v-for="bloco in blocos">
+    <div id="bloco-title">
+      {{bloco.name_bloco}}
+      <span id="seta-expandir">
+        <router-link :to= "'/apartments/create/' + bloco.id" > + </router-link>
+        <a href="#">v</a>
+      </span>
+    </div>
+
   </div>
 </template>
 
@@ -51,40 +43,20 @@ const auth = useAuth();
 
 </script>
 <style scoped>
-  #blocos-table{
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  #blocos-list{
+    width: 350px;
+    height: 45px;
   }
-
-  #blocos-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+  #bloco-title{
+    padding: 15px 13px;
   }
-
-  #blocos-table th, td {
-    padding: 12px 15px;
+  #seta-expandir{
+    margin-left: 50%;
   }
-
-  #blocos-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-
-  #blocos-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-
-  #blocos-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-  }
-
-  #blocos-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
+  a{
+    font-size: 24px;
+    text-decoration: none;
+    margin: 15px;
   }
 
 </style>

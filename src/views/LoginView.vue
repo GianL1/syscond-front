@@ -2,10 +2,10 @@
   <h2>Login</h2>
 
   <form @submit.prevent="login" >
-    <label for="email">Email</label>
+    <label for="email">Email: </label>
     <input type="email" name="email">
 
-    <label for="password">Password</label>
+    <label for="password">Password: </label>
     <input type="text" name="password">
 
     <InputSubmit :titulo_botao="Login"></InputSubmit>
